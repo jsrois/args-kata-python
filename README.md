@@ -34,3 +34,16 @@ If you are feeling ambitious, extend your code to support lists eg
 So the “g” flag indicates a list of strings, [“this”, “is”, “a”, “list”] and the “d” flag indicates a list of integers, [1, 2, -3, 5].
 
 Make sure your code is extensible, in that it is straightforward and obvious how to add new types of values.
+
+```python
++import re
++
++
+ class ParamScanner:
+     def get_groups(self, command_line_arguments):
+-        pass
++        pattern = re.compile(r"(?:(?P<key>-[a-zA-Z])\s*(?P<value>[^\s\-]+)*)")
++        groups = [(key, value or True) for key, value in pattern.findall(command_line_arguments)]
++        return groups
+
+```

@@ -12,11 +12,14 @@ class ArgParser:
     def __init__(self, schema):
         self.parameters = {}
         for parameter in schema:
-            if type(parameter) is tuple:
-                k, v = parameter
-                self.parameters[k] = v
-            else:
-                self.parameters[parameter] = False
+            self.add_parameter_to_schema(parameter)
+
+    def add_parameter_to_schema(self, parameter):
+        if type(parameter) is tuple:
+            k, v = parameter
+            self.parameters[k] = v
+        else:
+            self.parameters[parameter] = False
 
     def parse(self, command_line_arguments):
         for key, value in ParamScanner().get_groups(command_line_arguments):

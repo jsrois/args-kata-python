@@ -4,7 +4,7 @@ from unittest.mock import patch
 from argparser import ArgParser
 
 
-class TestAcceptance(unittest.TestCase):
+class TestArgParser(unittest.TestCase):
     def test_updates_parameter_values_from_command_line_arguments(self):
         with patch('argparser.ParamScanner.get_groups') as mock:
             mock.return_value = [
