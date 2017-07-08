@@ -1,6 +1,11 @@
+import re
+
+
 class ParamScanner:
     def get_groups(self, command_line_arguments):
-        pass
+        pattern = re.compile(r"(?:(?P<key>-[a-zA-Z])\s*(?P<value>[^\s\-]+)*)")
+        groups = [(key, value or True) for key, value in pattern.findall(command_line_arguments)]
+        return groups
 
 
 class ArgParser:
