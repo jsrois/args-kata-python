@@ -9,7 +9,7 @@ class TestArgParser(unittest.TestCase):
         with patch('argparser.ParamScanner.get_groups') as mock:
             mock.return_value = [
                 ("-l", True),
-                ("-p", 8080),
+                ("-p", "8080"),
                 ("-b", "/usr/local/log")
             ]
             parser = ArgParser(schema={"-l", ("-p", 8000), ("-b", "/usr/log")})
