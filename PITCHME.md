@@ -32,6 +32,15 @@ class TestAcceptance(unittest.TestCase):
 
 #HSLIDE
 
+Arrange! 
+```python
+class TestAcceptance(unittest.TestCase):
+    def test_updates_parameter_values_from_command_line_arguments(self):
+        parser = ArgParser(schema={"-l", ("-p", 8000), ("-b", "/usr/log")})
+```
+
+#HSLIDE
+Act! 
 ```python
 class TestAcceptance(unittest.TestCase):
     def test_updates_parameter_values_from_command_line_arguments(self):
@@ -40,16 +49,7 @@ class TestAcceptance(unittest.TestCase):
 ```
 
 #HSLIDE
-
-```python
-class TestAcceptance(unittest.TestCase):
-    def test_updates_parameter_values_from_command_line_arguments(self):
-        parser = ArgParser(schema={"-l", ("-p", 8000), ("-b", "/usr/log")})
-        parser.parse("-l -p 8080 -b /usr/local/log")
-```
-
-#HSLIDE
-
+Assert!
 ```python
 class TestAcceptance(unittest.TestCase):
     def test_updates_parameter_values_from_command_line_arguments(self):
@@ -63,6 +63,17 @@ class TestAcceptance(unittest.TestCase):
 #HSLIDE
 
 # 2. Unit Test (failing!)
+
+#HSLIDE
+
+![](http://www.weteachwelearn.org/wp-content/uploads/2016/05/Discussion.jpg)
+
+
+#HSLIDE
+
+Introducing a Collaborator: `ParamScanner`
+
+![](class.png)
 
 #HSLIDE
 

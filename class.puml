@@ -1,0 +1,13 @@
+@startuml
+
+class ArgParser {
+ + parse("-l -p 8080 -d /usr/logs")
+}
+
+class ParamScanner {
+ + getGroups("-l -p 8080 -d /usr/logs") -> (-l, True), (-p, 8080), (-d, /usr/logs)
+}
+
+ArgParser -> ParamScanner
+
+@enduml
