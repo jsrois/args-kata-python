@@ -3,5 +3,16 @@
  
 #HSLIDE
 
-![CleanCode](https://www.google.es/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjqrdS-opjVAhVH1hoKHYJmAyYQjRwIBw&url=https%3A%2F%2Fwww.amazon.com%2FClean-Code-Handbook-Software-Craftsmanship%2Fdp%2F0132350882&psig=AFQjCNGQoko8Hf_U4GqMIliVDgUAYhe5CA&ust=1500654148926772)
+![CleanCode](http://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436202607i/3735293._UY630_SR1200,630_.jpg)
 
+#HSLIDE
+
+> The arguments passed to the program consist of flags and values. Flags should be one character, preceded by a minus sign. Each flag should have zero, or one value associated with it.
+
+
+> `./myprogram -l -p 8080 -d /usr/logs`
+
+
+#HSLIDE
+
+![](http://www.weteachwelearn.org/wp-content/uploads/2016/05/Discussion.jpg)
