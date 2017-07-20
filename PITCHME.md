@@ -132,9 +132,21 @@ Regex + python `Falsy` magic
 ```python
 class ParamScanner:
     def get_groups(self, command_line_arguments):
-        pattern = re.compile(r"(?:(?P<key>-[a-zA-Z])\s+(?P<value>[^\s\-]+)*)")
+        pattern = \
+            re.compile(r"(?:(?P<key>-[a-zA-Z])\s+(?P<value>[^\s\-]+)*)")
         groups = [(key, value or True) for key, value in pattern.findall(command_line_arguments)]
         return groups
+```
+
+#HSLIDE
+
+`r"(?:(?P<key>-[a-zA-Z])\s+(?P<value>[^\s\-]+)*)"`
+
+#HSLIDE
+```python
+groups = [(key, value or True) 
+            for key, value in 
+                pattern.findall(command_line_arguments)]
 ```
 
 #HSLIDE
