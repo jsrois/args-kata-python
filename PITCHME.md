@@ -98,13 +98,13 @@ class TestArgParser(unittest.TestCase):
 #HSLIDE
 
 
-```python
-        with patch('argparser.ParamScanner.get_groups') as mock:
-            mock.return_value = [
-                ("-l", True),
-                ("-p", "8080"),
-                ("-b", "/usr/local/log")
-            ]
+```
+with patch('argparser.ParamScanner.get_groups') as mock:
+    mock.return_value = [
+        ("-l", True),
+        ("-p", "8080"),
+        ("-b", "/usr/local/log")
+    ]
 ```
 
 #HSLIDE
