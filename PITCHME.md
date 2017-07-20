@@ -106,3 +106,38 @@ class TestArgParser(unittest.TestCase):
                 ("-b", "/usr/local/log")
             ]
 ```
+
+#HSLIDE
+
+![](first_unit_test.png)
+
+#HSLIDE
+
+```python
+class TestParamScanner(unittest.TestCase):
+    def test_splits_command_line_arguments_in_groups(self):
+        self.assertEqual(ParamScanner().get_groups("-l -p 8080 -b /usr/local/log"), [
+            ("-l", True),
+            ("-p", '8080'),
+            ("-b", "/usr/local/log")])
+```
+
+#HSLIDE
+
+![](http://www.weteachwelearn.org/wp-content/uploads/2016/05/Discussion.jpg)
+
+#HSLIDE
+
+Regex + python `Falsy` magic
+```python
+class ParamScanner:
+    def get_groups(self, command_line_arguments):
+        pattern = re.compile(r"(?:(?P<key>-[a-zA-Z])\s+(?P<value>[^\s\-]+)*)")
+        groups = [(key, value or True) for key, value in pattern.findall(command_line_arguments)]
+        return groups
+```
+
+#HSLIDE
+
+![](second_unit_test.png)
+
